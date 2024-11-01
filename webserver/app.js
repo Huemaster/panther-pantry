@@ -24,7 +24,7 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 routerGen.gen(app);
 //End Middleware definition
-
+process.env.PORT = process.env.PORT ? process.env.PORT : 5000;
 //Start Server
 console.log("Starting up server on ports: "+process.env.PORT+", "+process.env.PORTSSL);
 httpServer.listen(process.env.PORT,() => console.log('Server started listening on port: '+process.env.PORT));
